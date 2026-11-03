@@ -1,0 +1,6 @@
+{
+  "name": "AI Smart Energy Management System",
+  "description": "Real-time IoT energy monitoring, ESP32 appliance control, ML monthly usage forecasting and electricity bill estimation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

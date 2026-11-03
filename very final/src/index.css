@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+:root {
+  --color-ice-blue: #CBE5F6;
+  --color-powder-blue: #A2D8E2;
+  --color-soft-cyan: #8BF0F0;
+  --color-cornflower: #5C94ED;
+}
+
+body {
+  background: linear-gradient(145deg, #EBF5FC 0%, #E0F2FA 40%, #D4EDF8 75%, #CBE5F6 100%);
+  min-height: 100vh;
+  color: #0F172A;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbars themed in Ice Blue & Cornflower */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #EAF4FC;
+}
+::-webkit-scrollbar-thumb {
+  background: #A2D8E2;
+  border-radius: 9999px;
+  border: 2px solid #EAF4FC;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5C94ED;
+}
+
+/* Glowing energy aura animation in Soft Cyan & Cornflower */
+@keyframes energy-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(139, 240, 240, 0.4), 0 0 30px rgba(92, 148, 237, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(139, 240, 240, 0.7), 0 0 45px rgba(92, 148, 237, 0.35);
+  }
+}
+
+.animate-energy-glow {
+  animation: energy-glow 2.5s infinite ease-in-out;
+}
+
+/* Custom styled range slider in Cornflower & Soft Cyan with exact center alignment */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 24px;
+  background: transparent;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+/* WebKit Track (Chrome, Safari, Edge) */
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #8BF0F0 0%, #A2D8E2 50%, #5C94ED 100%);
+  border-radius: 9999px;
+  cursor: pointer;
+  border: none;
+}
+
+/* WebKit Thumb - (6px track - 20px thumb) / 2 = -7px mathematically centers thumb on track line */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 3.5px solid #5C94ED;
+  cursor: pointer;
+  margin-top: -7px;
+  box-shadow: 0 2px 6px rgba(92, 148, 237, 0.45);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 10px rgba(92, 148, 237, 0.65);
+}
+
+/* Firefox Track */
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #8BF0F0 0%, #A2D8E2 50%, #5C94ED 100%);
+  border-radius: 9999px;
+  cursor: pointer;
+  border: none;
+}
+
+/* Firefox Thumb */
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 3.5px solid #5C94ED;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(92, 148, 237, 0.45);
+  box-sizing: border-box;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 10px rgba(92, 148, 237, 0.65);
+}
